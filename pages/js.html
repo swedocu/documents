@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Document</title>
+    <link rel="stylesheet" href="./styles/github-dark.min.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+    <div class="title-top">
+        <h2>SQL 2. Hafta Ders Uygulaması</h2>
+    </div>
+    <div class="code-box">
+        <pre><code class="sql" style="font-size: 16px;">
+    /*Personel tablosunun tamamı*/
+            
+    select * from personelT
+            
+    /*Personel tablosundan adı soyadı ve maaşını görüntüleyin*/
+            
+    select ADI, SOYADI, MAAŞ from personelT
+            
+    /*Personel id si  3 ve 3ten büyük olanların ad soyad ve maaş bilgilerini görüntüleyen sorgu*/
+            
+    select ADI, SOYADI, MAAŞ  from personelT where PER_id >= 3
+            
+    /*Görevi mühendis şehri ankara olanların maaşının yüzde yirmisi sogrulama*/
+            
+    select ADI, SOYADI, MAAŞ*0.2 as YÜZDEYİRMİ, GÖREVI from personelT where GÖREVI = 'Mühendis' AND  ŞEHIR = 'Ankara'
+            
+    /*Soyadı Demir olan Ya da maaşı 5000 den fazla olup şehri ankara olan....*/
+        
+    select * from personelT where SOYADI = 'Demir' OR (MAAŞ > 5000 and ŞEHIR = 'Ankara')
+                </code></pre>
+    </div>
+    
+
+
+
+
+    <script src="./highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
